@@ -47,7 +47,7 @@ public class NoBreakDoor extends JavaPlugin{
 
 		// メッセージ表示
 		PluginDescriptionFile pdfFile=this.getDescription();
-		log.info("["+pdfFile.getName()+"] version "+pdfFile.getVersion()+" by syam is enabled!")
+		log.info("["+pdfFile.getName()+"] version "+pdfFile.getVersion()+" by syam is enabled!");
 	}
 
 	/*
