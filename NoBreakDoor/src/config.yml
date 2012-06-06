@@ -1,0 +1,5 @@
+# This is a default config file!
+IgnoreWorld:
+- this_is_a
+- ignore_world
+verboselog: false

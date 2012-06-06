@@ -1,0 +1,8 @@
+##  Plugin Information  ##
+name: NoBreakDoor
+main: syam.NoBreakDoor.NoBreakDoor
+version: 1.00
+description: Stop Zombie griefing!
+website: http://sakura-server.net/
+##  Original Author     ##
+author: syam
