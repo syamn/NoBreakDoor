@@ -50,8 +50,8 @@ public class NoBreakDoor extends JavaPlugin{
 		log.info("["+pdfFile.getName()+"] version "+pdfFile.getVersion()+" by syam is enabled!");
 	}
 
-	/*
-	 * SakuraServerプラグインのための設定ファイルを読み込む
+	/**
+	 * 設定ファイルを読み込む
 	 */
 	private void loadConfig()
 	{
