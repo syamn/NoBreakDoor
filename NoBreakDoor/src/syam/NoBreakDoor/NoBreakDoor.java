@@ -61,7 +61,7 @@ public class NoBreakDoor extends JavaPlugin{
 
 		if (!file.exists()){
 			if (!newConfig(file)){
-				throw new IllegalArgumentException("新しい設定ファイルを作れませんでした");
+				throw new IllegalArgumentException("Could not create configuration file!");
 			}
 		}
 		reloadConfig();
