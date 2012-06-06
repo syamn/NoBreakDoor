@@ -1,7 +1,4 @@
 # Eclipse stuff
-/.classpath
-/.project
-/.settings
 .classpath
 .project
 .settings
@@ -9,17 +6,14 @@
 # netbeans
 /nbproject
 
-# we use maven!
-/build.xml
-
 # maven
+/build.xml
 /target
 
 # vim
 .*.sw[a-p]
 
 # Mac filesystem dust
-/.DS_Store
 .DS_Store
 
 # intellij
