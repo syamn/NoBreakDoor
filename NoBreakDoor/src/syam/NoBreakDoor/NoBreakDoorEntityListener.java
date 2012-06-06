@@ -36,7 +36,7 @@ public class NoBreakDoorEntityListener implements Listener {
 		}
 
 		// 無視ワールドリストに入っている場合は無視する
-		for(int i = 0; i < NoBreakDoor.ignoreWorlds.size(); ++i){
+		for(int i = 0, size = NoBreakDoor.ignoreWorlds.size(); i < size; ++i){
 			if(Bukkit.getWorld(NoBreakDoor.ignoreWorlds.get(i)) == event.getBlock().getWorld()){
 				if (NoBreakDoor.verbose){ log.info(logPrefix+"This world is ignore on config file!"); }
 				return;
