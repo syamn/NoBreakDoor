@@ -34,11 +34,9 @@ public class NoBreakDoorEntityListener implements Listener {
 		}
 
 		// 無視ワールドリストに入っている場合は無視する
-		for(String world : NoBreakDoor.ignoreWorlds){
-			if (Bukkit.getWorld(world) == event.getBlock().getWorld()){
-				if (NoBreakDoor.verbose){ log.info(logPrefix+"This world is ignore on config file!"); }
-				return;
-			}
+		if (NoBreakDoor.ignoreWorlds.contains(event.getBlock().getWorld().getName())){
+			if (NoBreakDoor.verbose){ log.info(logPrefix+"This world is ignore on config file!"); }
+			return;
 		}
 
 		if (NoBreakDoor.verbose){ log.info(logPrefix+"Prevent break door!"); }
