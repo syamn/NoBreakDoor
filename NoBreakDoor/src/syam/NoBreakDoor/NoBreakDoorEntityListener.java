@@ -15,33 +15,32 @@ public class NoBreakDoorEntityListener implements Listener {
 	@SuppressWarnings("unused")
 	private final NoBreakDoor plugin;
 
-	public NoBreakDoorEntityListener(NoBreakDoor plugin){
+	public NoBreakDoorEntityListener(final NoBreakDoor plugin){
 		this.plugin = plugin;
 	}
 
 	@EventHandler(priority = EventPriority.NORMAL)
-	public void onEntityBreakDoor(EntityBreakDoorEvent event){
-
+	public void onEntityBreakDoor(final EntityBreakDoorEvent event){
 		if (NoBreakDoor.verbose){
 			log.info(logPrefix + "Catch try to break door at " + event.getBlock().getWorld().getName() + ":" +
 					  event.getBlock().getX() + "," + event.getBlock().getY() + "," + event.getBlock().getZ());
 		}
 
 		// 無視ワールドリストが空の場合は無条件で破壊をキャンセルする
-		if (NoBreakDoor.ignoreWorlds.isEmpty() ||
-				NoBreakDoor.ignoreWorlds == null){
+		if (NoBreakDoor.ignoreWorlds.isEmpty() || NoBreakDoor.ignoreWorlds == null){
 			if (NoBreakDoor.verbose){ log.info(logPrefix+"Ignore world is Empty! Prevent break door!"); }
 			event.setCancelled(true);
 			return;
 		}
 
 		// 無視ワールドリストに入っている場合は無視する
-		for(int i = 0, size = NoBreakDoor.ignoreWorlds.size(); i < size; ++i){
-			if(Bukkit.getWorld(NoBreakDoor.ignoreWorlds.get(i)) == event.getBlock().getWorld()){
+		for(String world : NoBreakDoor.ignoreWorlds){
+			if (Bukkit.getWorld(world) == event.getBlock().getWorld()){
 				if (NoBreakDoor.verbose){ log.info(logPrefix+"This world is ignore on config file!"); }
 				return;
 			}
 		}
+
 		if (NoBreakDoor.verbose){ log.info(logPrefix+"Prevent break door!"); }
 		event.setCancelled(true);
 	}
